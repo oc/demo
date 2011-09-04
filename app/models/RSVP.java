@@ -14,8 +14,7 @@ import java.lang.*;
 
 @Entity
 public class RSVP extends Model {
-	
-	@ManyToOne	
+	@ManyToOne
 	public User owner;
 	
 	@ManyToOne

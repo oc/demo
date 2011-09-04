@@ -11,21 +11,21 @@ public class User extends Model {
 
 	public String username;
 
-	public Credentials twitterCreds;
+	//public Credentials twitterCreds;
 
     public boolean admin;
 
 	public User(String username) {
 		this.username = username;
-		this.twitterCreds = new Credentials();
-		this.twitterCreds.save();
+		//this.twitterCreds = new Credentials();
+		//this.twitterCreds.save();
 		this.admin = "olecr".equals(username); //XXX
 	}
 
 	public static User findOrCreate(String username) {
 		User user = User.find("username", username).first();
 		if (user == null) {
-			user = new User(username);
+			user = new User(username).save();
 		}
 		return user;
 	}

@@ -1,10 +1,23 @@
 #{extends 'main.html' /}
 #{set title:'post.title' /}
 
+#{if event}
 <div class="event hentry" id="${event.id}">
 	<h1 class="hentry-title">${event.title}</h1>
-	<span class="hentry-meta location">${event.location}</span>
-	<span class="hentry-meta owner"><a href="http://twitter.com/${event.owner}">@${event.owner}</a></span>
-	<span class="hentry-meta date">${event.happensAt.format('MMM dd hh:mm')}</span>
+	Location: <span class="hentry-meta location">${event.location}</span>
+ 	Arranged by: <span class="hentry-meta owner"><a href="http://twitter.com/${event.owner}">@${event.owner}</a></span>
+	When: <span class="hentry-meta date">${event.happensAt.format('MMM dd hh:mm')}</span>
 	<div class="hentry-content">${event.description}</div>
+	#{if rsvps}
+	<div>${rsvps.size} are attending:</div>
+	<ul>
+	#{list items:rsvps, as:'rsvp'}	
+		<li>${rsvp.owner.username}</li>
+	#{/list}
+	</ul>
+	#{/if}	
 </div>
+#{/if}
+#{else}
+<div>Not found</div>
+#{/else}
