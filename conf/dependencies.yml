@@ -1,4 +1,6 @@
 # Application dependencies
 
 require:
-    - play
+    - play 
+    - play -> crud
+    - oauth.signpost -> signpost-core -> 1.2.1

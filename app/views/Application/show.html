@@ -1,8 +1,10 @@
 #{extends 'main.html' /}
 #{set title:'post.title' /}
 
-<div class="post hentry" id="${post.id}">
-	<h1 class="hentry-title">${post.title}</h1>
-	<span class="hentry-meta post-date">${post.createdAt.format('MMM dd')}</span>
-	<div class="hentry-content">${post.body}</div>
+<div class="event hentry" id="${event.id}">
+	<h1 class="hentry-title">${event.title}</h1>
+	<span class="hentry-meta location">${event.location}</span>
+	<span class="hentry-meta owner"><a href="http://twitter.com/${event.owner}">@${event.owner}</a></span>
+	<span class="hentry-meta date">${event.happensAt.format('MMM dd hh:mm')}</span>
+	<div class="hentry-content">${event.description}</div>
 </div>

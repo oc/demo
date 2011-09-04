@@ -4,6 +4,8 @@ import play.*;
 import play.db.jpa.*;
 import play.data.validation.*;
 
+import models.oauth.*;
+
 import javax.persistence.*;
 import javax.util.*;
 
@@ -11,29 +13,33 @@ import java.util.*;
 import java.lang.*;
 
 @Entity
-public class Post extends Model {
-	
+public class Event extends Model {
+
 	@Required
 	public String title;
+
+	@Required
+	@ManyToOne	
+	public User owner;
+	
+	@Required
+	public Date happensAt;
+			
+	@Lob
+	public String description;
+	
+	public String location;
 	
 	public String slug;
-	
-	@Required
-	@MaxSize(5000)
-	@Lob
-	public String excerpt;
-	
-	@Required
-	@MaxSize(100000)
-	@Lob
-	public String body;
-	
 	public Date createdAt;
 	
-	public Post(String title, String excerpt, String body) {
+	public Event(User owner, String title, String location, String description, Date happensAt) {
+		this.owner = owner;
 		this.title = title;
-		this.excerpt = excerpt;
-		this.body = body;
+		this.location = location;
+		this.description = description;
+		this.happensAt = happensAt;
+		
 		this.slug = title.toLowerCase().replaceAll("\\s+", "-");
 		this.createdAt = new Date();
 	}

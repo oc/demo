@@ -4,35 +4,52 @@
 #{ifnot posts}
 <div class="hentry p1 post publish">
 	<div class="entry-date"></div>
-	<h2 class="entry-title"><a href="#">No posts</a></h2>
-	<div class="entry-content">No posts</div>
+	<h2 class="entry-title"><a href="#">No events</a></h2>
+	<div class="entry-content">No events</div>
 </div>
 #{/ifnot}
 <div id="qe"></div>
-#{list items:posts, as:'post'}
-	<div class="hentry p1 post publish" id="${post.id}">
-		<div class="entry-date">${post.createdAt.format('MMM dd')}</div>
-		<h2 class="entry-title"><a href="/-/${post.slug}">${post.title}</a></h2>
-		<div class="entry-content">${post.excerpt}</div>
-	</div>
+<ul>
+#{list items:events, as:'event'}
+	<li class="hentry p1 post publish" id="${event.id}">
+		<div class="entry-date">${event.happensAt.format('MMM dd')}</div>
+		<h2 class="entry-title"><a href="/-/${event.slug}">${event.title}</a></h2>
+		<div class="entry-content">${event.description}</div>
+	</li>
 #{/list}
-<div class="hentry p1 post publish" id="create">
-	<h2>Quickedit (admin)</h2>
-	<label for="title">Title</label><br><input type="text" id="qe-title"><br>
-	<label for="excerpt">Excerpt</label><br><input type="text" id="qe-excerpt"/><br>
-	<label for="body">Body</label><br><input type="text" id="qe-body"/><br>
+</ul>
+
+<div class="hentry p1 event publish" id="create">
+	<h2>Quickedit</h2>
+	<label for="qe-username">Twitter username</label><br><input type="text" id="qe-username"><br>
+	<label for="qe-title">Title</label><br><input type="text" id="qe-title"><br>
+	<label for="qe-location">Location</label><br><input type="text" id="qe-location"/><br>
+	<label for="qe-description">Description</label><br><input type="text" id="qe-description"/><br>
+	<label for="qe-happensAt">Happens at</label><br><input type="text" id="qe-happensAt"/><br>
 	<button id="createPost">Create!</button>
 </div>
-
 <script>
-	$('#createPost').click(function() {
-		$.post('@{createPost()}', { 
+	$('#createEvent').click(function() {
+		$.post('@{createEvent()}', { 
+			username: $('#qe-username').val(), 
 			title: $('#qe-title').val(), 
-			excerpt: $('#qe-excerpt').val(), 
-			body: $('#qe-body').val() 
-		}, function(post) {
-			$('#qe').prepend('<div class="hentry p1 post publish"><div class="entry-date">'+ post.createdAt +'</div><h2 class="entry-title"><a href="/-/' + post.slug + '">' + post.title +'</a></h2><div class="entry-content">' + post.excerpt +'</div></div>');
+		    location: $('#qe-location').val(),
+			description: $('#qe-description').val(), 
+			happensAt: $('#qe-happensAt').val()
+		}, 
+		function(event) {
+			alert(event);
+			$('#qe').prepend(
+				'<div class="hentry p1 event publish">'+
+				'<div class="entry-date">' + event.happensAt +'</div>' +
+				'<h2 class="entry-title"><a href="/-/' + event.slug + '">' + event.title +'</a></h2>'+
+				'<div class="entry description">' + event.description +'</div></div>');
 		}, 'json');
 	});
 </script>
+
+%{
+doc = mentions.asXml()
+}%
+
 
