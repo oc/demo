@@ -1,0 +1,8 @@
+#{extends 'main.html' /}
+#{set title:'post.title' /}
+
+<div class="post hentry" id="${post.id}">
+	<h1 class="hentry-title">${post.title}</h1>
+	<span class="hentry-meta post-date">${post.createdAt.format('MMM dd')}</span>
+	<div class="hentry-content">${post.body}</div>
+</div>

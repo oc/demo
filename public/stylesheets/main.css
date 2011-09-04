@@ -1,0 +1,388 @@
+/** Main layout **/
+
+html, body {
+	background-image: url(/public/images/page_bkg.jpg);
+	background-repeat: repeat-x;
+	background-color: #0C0703;
+	font-family: "Fedra Sans Screen Regular 2", verdana;
+	font-style: normal;
+	font-weight: normal;
+	font-stretch: normal;
+	font-size: 0.82em;
+}
+input, textarea {
+	font-family: "Fedra Sans Screen Regular 2", Verdana, Geneva, sans-serif;
+	font-size: 1em;
+}
+h1 {
+	font-family: "Fedra Serif Screen Bold",Georgia,"Times New Roman",Serif;
+	font-style: normal;
+	font-weight: bold;
+	font-stretch: normal;
+	font-size:320%;
+	line-height:1.1em;
+	margin-bottom:0.3em;
+}
+
+h2 {
+	font-family: "Fedra Serif Screen Bold",Georgia,"Times New Roman",Serif;
+	font-style: normal;
+	font-weight: bold;
+	font-stretch: normal;
+	font-size:270%;
+	line-height:1.1em;
+	margin-bottom:0.3em;
+	color:#847363;	
+}
+
+h3 {
+	font-family: "Fedra Serif Screen Bold",Georgia,"Times New Roman",Serif;
+	font-style: normal;
+	font-weight: bold;
+	font-stretch: normal;
+	font-size:220%;
+	line-height:1.1em;
+	margin-bottom:0.4em;
+	color:#847363;
+}
+
+h4 {
+	font-family: "Fedra Serif Screen Bold",Georgia,"Times New Roman",Serif;
+	font-style: normal;
+	font-weight: bold;
+	font-stretch: normal;
+	font-size:190%;
+	line-height:1.1em;
+	margin-bottom:0.5em;
+	color:#847363;
+}
+
+h5 {
+	font-family: "Fedra Sans Screen Bold 2",Georgia,"Times New Roman",Serif;
+	font-style: normal;
+	font-weight: bold;
+	font-stretch: normal;
+	font-size:150%;
+	line-height:1.5em; 
+	margin-bottom:0.5em;
+	color:#847363;
+}  
+
+h6 {
+	font-family: "Fedra Sans Screen Bold 2",Georgia,"Times New Roman",Serif;
+	font-style: normal;
+	font-weight: bold;
+	font-stretch: normal;
+	font-size:120%;
+	line-height:1.5em; 
+	margin-bottom:0.6em;
+	color:#847363;
+}
+blockquote {
+	font-family: "Fedra Sans Screen Italic 2",Georgia,"Times New Roman",Serif;
+	font-style: normal;
+	font-weight: italic;
+	font-stretch: normal;
+	font-size:120%;
+	line-height:1.5em; 
+	margin-bottom:0.6em;
+	color:#847363;	
+}
+img {
+	border: 0px;
+}
+
+abbr {
+	border-bottom: none;
+}
+
+a {
+	color:#019ab6;
+	text-decoration:none;
+}
+a:hover {
+	color:#F04E52;
+}
+a:active {
+	color:#F04E52;
+}
+
+strong {
+	font-family: "Fedra Sans Screen Bold 2";
+	font-style: normal;
+	font-weight: bold;
+	font-stretch: normal;
+}
+
+em {
+	font-family: "Fedra Sans Screen Italic 2";
+	font-style: italic;
+	font-weight: normal;
+	font-stretch: normal;
+}
+
+#access {
+	position: absolute;
+	left: -1000px;
+}
+header {
+	text-align: center;
+	padding-right: 45px;
+	padding-top: 25px;
+	padding-bottom: 20px;
+}
+div#header-wrapper {
+	width: 800px;
+	height: 50px;
+}
+footer {
+	width: auto;
+	padding: 5px 250px 5px 0;
+	text-align: center;
+	background-color: #000;
+}
+footer a {
+	color: #6da6ae;
+}
+footer a:hover {
+	color:#F04E52;
+}
+
+#blog-title {
+	display: none;
+}
+
+#blog-description {
+	display: none;
+}
+
+#wrapper {
+	width: 90%;
+	min-width: 800px;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+#primary {
+}
+
+#content {
+	background-color: #fff;
+	padding: 13px;
+	min-height: 500px;
+}
+/* BLOG POSTS - Frontpage */
+
+.hentry {
+	padding: 0 13px 13px 13px;
+	margin-bottom: 1.5em;
+	line-height: 1.5em;
+}
+
+/* n posts */
+.hentry {
+	clear: both;
+}
+.hentry .entry-title {
+	font-size: 2em;
+	line-height: 1.3em;
+	margin-top: 0em;
+	margin-bottom: 0.2em;
+}
+.hentry .entry-content p {
+	margin: 0.2em 0 0.8em 0;
+	font-family: "Fedra Sans Screen Regular 2", Verdana, Tahoma, Arial, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-stretch: normal;
+	font-size:120%;
+	line-height: 1.7em;
+	}
+
+.hentry .entry-meta {
+	padding-bottom: 1em;
+	border-bottom: 1px solid #8c8171;
+	font-family:Georgia,Times New Roman,Serif;
+}
+.hentry .entry-meta .meta-sep{
+	display: none;
+}
+.hentry .entry-meta span {
+	display: block;
+	clear: left;
+}
+.hentry .entry-meta .avatar.photo {
+	display: block;
+	float: left;
+	margin-right: 1em;
+}
+.hentry .entry-meta span.authors {
+	clear: left;
+}
+
+/* First post */
+.home .hentry.p1:first-child {
+	color: #b0a599;
+}
+.home .hentry.p1:first-child {
+	padding: 0px;
+}
+.home .hentry.p1:first-child .entry-date {
+	font-weight: bold;
+	border: 0px;
+	color: #0c0703;
+	padding: 0.3em 0 0.4em;
+	float: none;
+}
+
+.home .hentry.p1:first-child .entry-title {
+	background-color: #0c0703;
+	padding: 30px 20px 0px 20px;
+	font-size: 230%;
+	font-weight: 100;
+	line-height: 1.3em;
+	margin: 0px;
+	background-image: url(gfx/latestStoryArrow.gif);
+	background-repeat: no-repeat;
+	background-position: 20px 0px;
+}
+.home .hentry.p1:first-child .entry-title a {
+	color: #fff;
+	margin: 0px;
+}
+.home .hentry.p1:first-child .entry-title a:hover {
+	color: #F04E52;
+}
+.home .hentry.p1:first-child .entry-content {
+	padding: 5px 20px 5px 20px;
+	background-color: #0c0703;
+	margin: 0px;
+	font-family: "Fedra Sans Screen Regular 2",Georgia,Times New Roman,Serif;
+	font-style: normal;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 1.25em;
+	font-size: 140%;
+}
+.home .hentry.p1:first-child .entry-meta {
+	padding: 0 20px 20px 20px;
+	background-color: #0c0703;
+	float: none;
+}
+
+
+/* ENTRY */
+body.single {
+	text-align: left;
+}
+body.single .hentry  {
+	clear: both;
+}
+body.single .entry-title {
+	font-size: 320%;
+	padding-top: 0.5em;
+	color: #000;
+}
+.entry-content .wp-caption.alignright {
+	float: right;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+.entry-content .wp-caption.alignright img {
+	border: 1px solid #8c8171 !important;
+}
+.entry-content .wp-caption.alignright p {
+	color: #d8d3cd;
+	background-color: #847363;
+	text-align: left;
+	margin: 0 4px;
+	padding: 5px 1em;
+}
+body.single .entry-content {
+	clear: both;
+	margin-bottom: 1em;
+}
+body.single .entry-meta {
+	clear: both;
+	border: none;
+	padding-top: 1em;
+	color: #847363;
+}
+body.single .entry-meta span {
+	display: inline;
+}
+
+body.single #nav-above {
+	background-color: #847363;
+	padding: 0.5em 0;
+	font-size: 120%;
+	font-family:"Fedra Serif Screen Regular", Georgia,Times New Roman,Serif;
+	color: #c5beb5;
+
+	/*
+	background-image: url(gfx/h_dotted_line.gif);
+	background-position: bottom left;
+	background-repeat: repeat-x;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	*/
+}
+body.single #nav-below {
+	display: none;
+	background-image: url(gfx/h_dotted_line.gif);
+	background-position: top left;
+	background-repeat: repeat-x;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+body.single .navigation  {
+	text-align: right;
+	width: 100%;
+	float: left;
+	clear: both;
+}
+body.single .navigation .nav-previous {
+	padding-left: 10px;
+	float: left;
+}
+body.single .navigation .nav-next{
+	padding-right: 10px;
+}
+body.single .navigation a {
+	color: #c5beb5;
+}
+body.single .navigation a:hover {
+	color: #fff;
+}
+/* PAGE */
+body.page .hentry {
+	padding: 0;
+}
+body.page .hentry .entry-title {
+	background-color: #847363;
+	padding: 15px 10px 10px 10px;
+	margin: 0px 0px 10px 0px;
+	color: #c5beb5;
+	font-size: 280%;
+}
+body.page .hentry .entry-content {
+	padding: 0 10px;
+}
+
+code {
+	background-color: #F9F9F9;
+	font-family: "Fedra Mono Book";
+	font-style: normal;
+	font-weight: normal;
+	font-stretch: normal; 
+}
+
+
+pre {
+	font-family: "Fedra Mono Book";
+	font-style: normal;
+	font-weight: normal;
+	font-stretch: normal; 
+}   
+

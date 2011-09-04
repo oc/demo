@@ -1,0 +1,38 @@
+#{extends 'main.html' /}
+#{set title:'Blog' /}
+
+#{ifnot posts}
+<div class="hentry p1 post publish">
+	<div class="entry-date"></div>
+	<h2 class="entry-title"><a href="#">No posts</a></h2>
+	<div class="entry-content">No posts</div>
+</div>
+#{/ifnot}
+<div id="qe"></div>
+#{list items:posts, as:'post'}
+	<div class="hentry p1 post publish" id="${post.id}">
+		<div class="entry-date">${post.createdAt.format('MMM dd')}</div>
+		<h2 class="entry-title"><a href="/-/${post.slug}">${post.title}</a></h2>
+		<div class="entry-content">${post.excerpt}</div>
+	</div>
+#{/list}
+<div class="hentry p1 post publish" id="create">
+	<h2>Quickedit (admin)</h2>
+	<label for="title">Title</label><br><input type="text" id="qe-title"><br>
+	<label for="excerpt">Excerpt</label><br><input type="text" id="qe-excerpt"/><br>
+	<label for="body">Body</label><br><input type="text" id="qe-body"/><br>
+	<button id="createPost">Create!</button>
+</div>
+
+<script>
+	$('#createPost').click(function() {
+		$.post('@{createPost()}', { 
+			title: $('#qe-title').val(), 
+			excerpt: $('#qe-excerpt').val(), 
+			body: $('#qe-body').val() 
+		}, function(post) {
+			$('#qe').prepend('<div class="hentry p1 post publish"><div class="entry-date">'+ post.createdAt +'</div><h2 class="entry-title"><a href="/-/' + post.slug + '">' + post.title +'</a></h2><div class="entry-content">' + post.excerpt +'</div></div>');
+		}, 'json');
+	});
+</script>
+
