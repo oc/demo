@@ -32,13 +32,9 @@ public class Application extends Controller {
 		render(event);
 	}
 	
-	public static void createEvent(String username, String title, String location, String description, String date) {
-		User owner = User.find("username", username).first();
-		Date happensAt = new SimpleDateFormat("yyyy-MM-dd").parse(date);
-		if (owner != null && owner.isAdmin()) {
-			Event event = new Event(owner, title, location, description, happensAt).save();
-			renderJSON(event);
-		}
+	public static void createEvent( String title, String location, String description, Date happensAt) {
+		Event event = new Event(getUser(), title, location, description, happensAt).save();
+		renderJSON(event);
 	}
 	
 	public static void setStatus(String status) throws Exception {

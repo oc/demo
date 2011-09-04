@@ -9,6 +9,8 @@
 </div>
 #{/ifnot}
 <div id="qe"></div>
+
+<div><label for="qe-username">Twitter username</label><br><input type="text" id="qe-username"></div>
 <ul>
 #{list items:events, as:'event'}
 	<li class="hentry p1 post publish" id="${event.id}">
@@ -21,7 +23,6 @@
 
 <div class="hentry p1 event publish" id="create">
 	<h2>Quickedit</h2>
-	<label for="qe-username">Twitter username</label><br><input type="text" id="qe-username"><br>
 	<label for="qe-title">Title</label><br><input type="text" id="qe-title"><br>
 	<label for="qe-location">Location</label><br><input type="text" id="qe-location"/><br>
 	<label for="qe-description">Description</label><br><input type="text" id="qe-description"/><br>
@@ -31,7 +32,6 @@
 <script>
 	$('#createEvent').click(function() {
 		$.post('@{createEvent()}', { 
-			username: $('#qe-username').val(), 
 			title: $('#qe-title').val(), 
 		    location: $('#qe-location').val(),
 			description: $('#qe-description').val(), 
