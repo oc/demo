@@ -1,3 +1,4 @@
 demo/modules/crud
 demo/precompiled
 demo/tmp
+Gemfile.lock

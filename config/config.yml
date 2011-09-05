@@ -1,0 +1,17 @@
+repository:
+  url:  http://mgmt.muda.no:8081/nexus/content/repositories/releases
+  type: m2
+
+application:
+  name:        demo
+  group_id:    bekkopen
+  artifact_id: demo-jetty
+
+production:
+  hosts:           [app1.muda.no]
+  user:            deploy
+  prefix:          /var/apps
+  restart_command: sudo service demo reload
+  start_command:   sudo service demo start
+  stop_command:    sudo service demo stop
+  healthcheck_url: http://www.muda.no
