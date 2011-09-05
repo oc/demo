@@ -146,14 +146,15 @@ class DeployHelper < Bundler::GemHelper
   def restart_host(host)
     Net::SSH.start(host, user) do |ssh|
       Bundler.ui.info "Restarting service on #{host}..."
-      ssh.exec!(cfg(:restart_command))
+      ssh.exec(cfg(:stop_command))
+      ssh.exec(cfg(:start_command))
     end
   end
 
   def stop_host(host)
     Net::SSH.start(host, user) do |ssh|
       Bundler.ui.info "Stopping service on #{host}..."
-      ssh.exec!(cfg(:stop_command))
+      ssh.exec(cfg(:stop_command))
     end
   end
 
