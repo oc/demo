@@ -7,6 +7,7 @@ import play.db.jpa.*;
 import javax.persistence.*;
 
 @Entity
+@Table(name="`User`") // User is a reserved kw in postgresql
 public class User extends Model {
 
 	public String username;
