@@ -8,11 +8,13 @@
 	<div class="entry-content">No events</div>
 </div>
 #{/ifnot}
-<ul id="qe">
+<ul id="qe" class="events">
 #{list items:events, as:'event'}
-	<li id="${event.id}">
-		<span>${event.happensAt.format('MMM dd')}&nbsp;<a href="/-/${event.slug}">${event.title}</a>&mdash;&nbsp;${event.description}</span>
+	<li id="${event.id}" class="event">
 		<button class="rsvp" data-id="${event.id}" data-slug="${event.slug}">RSVP!</button>
+		<span class="event-date">${event.happensAt.format('MMM dd')}</span>
+		<span class="event-title"><a href="/-/${event.slug}">${event.title}</a></span>
+		<span class="event-description">${event.description}</span>
 	</li>
 #{/list}
 </ul>
@@ -43,12 +45,6 @@
 			happensAt: $('#qe-happensAt').val()
 		}, 
 		function(event) {
-			$('#qe').prepend(
-				'<li id="' + event.id + '">'+
-					'<span>' + event.happensAt + '&nbsp;<a href="/-/' + event.slug + '">' 
-					+ event.title + '</a>&mdash;&nbsp;' + event.description + '</span>' +
-					'<button class="rsvp" data-id="' + event.id + '" data-slug="' + event.slug + '">RSVP!</button>' +
-				'</li>');
 			window.location = '/';
 		}, 'json');
 	});

@@ -8,18 +8,18 @@ html, body {
 	font-style: normal;
 	font-weight: normal;
 	font-stretch: normal;
-	font-size: 0.82em;
+	font-size: 1em;
 }
 input, textarea {
 	font-family: "Fedra Sans Screen Regular 2", Verdana, Geneva, sans-serif;
-	font-size: 1em;
+	font-size: 1.1em;
 }
 h1 {
 	font-family: "Fedra Serif Screen Bold",Georgia,"Times New Roman",Serif;
 	font-style: normal;
 	font-weight: bold;
 	font-stretch: normal;
-	font-size:320%;
+	font-size:270%;
 	line-height:1.1em;
 	margin-bottom:0.3em;
 }
@@ -29,7 +29,7 @@ h2 {
 	font-style: normal;
 	font-weight: bold;
 	font-stretch: normal;
-	font-size:270%;
+	font-size:210%;
 	line-height:1.1em;
 	margin-bottom:0.3em;
 	color:#847363;	
@@ -40,7 +40,7 @@ h3 {
 	font-style: normal;
 	font-weight: bold;
 	font-stretch: normal;
-	font-size:220%;
+	font-size:180%;
 	line-height:1.1em;
 	margin-bottom:0.4em;
 	color:#847363;
@@ -51,7 +51,7 @@ h4 {
 	font-style: normal;
 	font-weight: bold;
 	font-stretch: normal;
-	font-size:190%;
+	font-size:160%;
 	line-height:1.1em;
 	margin-bottom:0.5em;
 	color:#847363;
@@ -62,7 +62,7 @@ h5 {
 	font-style: normal;
 	font-weight: bold;
 	font-stretch: normal;
-	font-size:150%;
+	font-size:140%;
 	line-height:1.5em; 
 	margin-bottom:0.5em;
 	color:#847363;
@@ -73,7 +73,7 @@ h6 {
 	font-style: normal;
 	font-weight: bold;
 	font-stretch: normal;
-	font-size:120%;
+	font-size:110%;
 	line-height:1.5em; 
 	margin-bottom:0.6em;
 	color:#847363;
@@ -172,6 +172,49 @@ footer a:hover {
 	min-height: 500px;
 }
 /* EVENTS - Frontpage */
+
+ul.events { 
+	font-size: 150%; 
+	padding-left: 20px;
+	width: 640px;
+}
+
+li.event { 
+	list-style: none; 
+}
+
+span.event-date { 
+	display: inline; 
+	float: left; 
+	margin-right: 10px; 
+}
+
+span.event-title { 
+	display: inline; 
+	width: 450px; 
+}
+
+span.event-description { 
+	display: block; 
+	font-style: italic;
+	border-bottom: 1px dashed black;	
+}
+
+button.rsvp { 
+	margin-top: 7px;
+	float: right;
+	padding: 8px; 
+	font-size: 110%;
+	font-weight: bold;
+}
+
+/* SHOW */
+span.small-date {
+	font-size: 60%;
+	font-style: italic;
+	vertical-align: middle;
+	line-height: 2em;
+}
 
 .hentry {
 	padding: 0 13px 13px 13px;

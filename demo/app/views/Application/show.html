@@ -12,7 +12,7 @@
 	<div>${rsvps.size} are attending:</div>
 	<ul>
 	#{list items:rsvps, as:'rsvp'}	
-		<li>${rsvp.owner.username}</li>
+		<li><a href="http://twitter.com/${rsvp.owner.username}">@${rsvp.owner.username}</a> RSVP'd <span class="small-date">at ${rsvp.createdAt.format('mm-dd hh:mm')}</span></li>
 	#{/list}
 	</ul>
 	#{/if}	
