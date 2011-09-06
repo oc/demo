@@ -1,13 +1,13 @@
 SHELL := /bin/bash
 
-all: war publish deploy
+all: war publish-local deploy
 
 war: 
 	play war demo -o build
 	@mkdir dist
 	jar cvf dist/demo.war -C build/ .
 
-publish:
+publish-local:
 	mvn install:install-file -DgroupId=bekkopen -DartifactId=demo -Dversion=1 -Dpackaging=war -DgeneratePom=true -DcreateChecksum=true -Dfile=dist/demo.war
 
 deploy:
